@@ -382,7 +382,7 @@ function start(json) {
                         "baseProperties": {
                             "availableMemory": 13000,
                             "memoryPrice": 1.9e-08,
-                            "performanceIndicator": 0.2
+                            "performanceIndicator": 1
                         }
                     },
                     {
