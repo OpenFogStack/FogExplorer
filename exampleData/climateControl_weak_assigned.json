@@ -229,7 +229,7 @@
         },
         {
             "id": "wa",
-            "label": "Window Actuator",
+            "label": "13x Window Actuator",
             "type": "sink",
             "baseProperties": {
                 "requiredMemory": 26
@@ -237,7 +237,7 @@
         },
         {
             "id": "aca",
-            "label": "Air Conditioning Actuator",
+            "label": "10x Air Conditioning Actuator",
             "type": "sink",
             "baseProperties": {
                 "requiredMemory": 20

@@ -235,7 +235,7 @@ $(document).ready(function () {
                 },
                 {
                     "id": "wa",
-                    "label": "Window Actuator",
+                    "label": "13x Window Actuator",
                     "type": "sink",
                     "baseProperties": {
                         "requiredMemory": 26
@@ -243,7 +243,7 @@ $(document).ready(function () {
                 },
                 {
                     "id": "aca",
-                    "label": "Air Conditioning Actuator",
+                    "label": "10x Air Conditioning Actuator",
                     "type": "sink",
                     "baseProperties": {
                         "requiredMemory": 20
@@ -614,7 +614,7 @@ function start(json) {
                     },
                     {
                         "id": "wa",
-                        "label": "Window Actuator",
+                        "label": "13x Window Actuator",
                         "type": "sink",
                         "baseProperties": {
                             "requiredMemory": 26
@@ -622,7 +622,7 @@ function start(json) {
                     },
                     {
                         "id": "aca",
-                        "label": "Air Conditioning Actuator",
+                        "label": "10x Air Conditioning Actuator",
                         "type": "sink",
                         "baseProperties": {
                             "requiredMemory": 20
