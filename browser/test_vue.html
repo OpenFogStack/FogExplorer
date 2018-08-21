@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vue Button Example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+</head>
+<body>
+
+<!-- BEGIN MY CONTENT -->
+
+The module buttons should appear below.
+
+<div id="modules">
+    <!-- Create an instance of the module-buttons component -->
+    <module-buttons
+        v-for="module in modules"
+        v-bind:module="module"
+        v-bind:key="module.id">
+    </module-buttons>
+</div>
+
+<!-- END MY CONTENT -->
+
+<!-- JavaScripts -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.js"></script>
+
+<script>
+    console.log("Initializing Vue Component.");
+
+    // Define a new component called module-buttons
+    Vue.component('module-buttons', {
+        props: ['module'],
+        template: `<button v-bind:style="{'background-color': module.color}" :id=module.id @click="selectedModule(module.id)" class="button"> {{ module.title }}</button>`
+    });
+
+    // Register component
+    new Vue({
+        el: '#modules',
+        data: {
+            modules: [
+                {title: "Title 1", color: randomColor(), id: "am_1"},
+                {title: "Title 2", color: randomColor(), id: "am_2"}
+            ]
+        },
+        methods: {
+            selectedModule: function (moduleId) {
+                console.log(moduleId);
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

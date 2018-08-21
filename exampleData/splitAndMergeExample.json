@@ -1,0 +1,167 @@
+{
+    "nodes": [
+        {
+            "id": "e1",
+            "label": "Edge S1",
+            "baseProperties": {
+                "availableMemory": 500,
+                "memoryPrice": 0.01,
+                "performanceIndicator": 1
+            }
+        },
+        {
+            "id": "e2",
+            "label": "Edge S2",
+            "baseProperties": {
+                "availableMemory": 500,
+                "memoryPrice": 0.01,
+                "performanceIndicator": 1
+            }
+        },
+        {
+            "id": "e3",
+            "label": "Edge A1",
+            "baseProperties": {
+                "availableMemory": 500,
+                "memoryPrice": 0.01,
+                "performanceIndicator": 1
+            }
+        },
+        {
+            "id": "e4",
+            "label": "Edge A2",
+            "baseProperties": {
+                "availableMemory": 500,
+                "memoryPrice": 0.01,
+                "performanceIndicator": 1
+            }
+        },
+        {
+            "id": "c",
+            "label": "Cloud",
+            "baseProperties": {
+                "availableMemory": 5000,
+                "memoryPrice": 0.1,
+                "performanceIndicator": 5
+            }
+        }
+    ],
+    "connections": [
+        {
+            "from": "e1",
+            "to": "c",
+            "baseProperties": {
+                "availableBandwidth": 10,
+                "bandwidthPrice": 1,
+                "latency": 1
+            }
+        },
+        {
+            "from": "e2",
+            "to": "c",
+            "baseProperties": {
+                "availableBandwidth": 10,
+                "bandwidthPrice": 1,
+                "latency": 1
+            }
+        },
+        {
+            "from": "c",
+            "to": "e3",
+            "baseProperties": {
+                "availableBandwidth": 10,
+                "bandwidthPrice": 1,
+                "latency": 1
+            }
+        },
+        {
+            "from": "c",
+            "to": "e4",
+            "baseProperties": {
+                "availableBandwidth": 10,
+                "bandwidthPrice": 1,
+                "latency": 1
+            }
+        },
+        {
+            "from": "e1",
+            "to": "e4",
+            "baseProperties": {
+                "availableBandwidth": 10,
+                "bandwidthPrice": 1,
+                "latency": 1
+            }
+        }
+    ],
+    "modules": [
+        {
+            "id": "sm_1",
+            "label": "Sensor 1",
+            "type": "sensor",
+            "baseProperties": {
+                "mode": "individual",
+                "outputRate": 10,
+                "requiredMemory": 100
+            }
+        },
+        {
+            "id": "sm_2",
+            "label": "Sensor 2",
+            "type": "sensor",
+            "baseProperties": {
+                "mode": "individual",
+                "outputRate": 10,
+                "requiredMemory": 100
+            }
+        },
+        {
+            "id": "fm",
+            "label": "Watson",
+            "type": "service",
+            "baseProperties": {
+                "mode": "individual",
+                "outputRatio": 0.3,
+                "referenceProcessingTime": 40,
+                "requiredMemory": 1000
+            }
+        },
+        {
+            "id": "am_1",
+            "label": "Sink1",
+            "type": "sink",
+            "baseProperties": {
+                "requiredMemory": 100
+            }
+        },
+        {
+            "id": "am_2",
+            "label": "Sink2",
+            "type": "sink",
+            "baseProperties": {
+                "requiredMemory": 100
+            }
+        }
+    ],
+    "dataPaths": [
+        {
+            "from": "sm_1",
+            "to": "fm"
+        },
+        {
+            "from": "sm_2",
+            "to": "fm"
+        },
+        {
+            "from": "fm",
+            "to": "am_1"
+        },
+        {
+            "from": "fm",
+            "to": "am_2"
+        },
+        {
+            "from": "sm_1",
+            "to": "am_2"
+        }
+    ]
+}

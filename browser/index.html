@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <title>Fog Cost Simulator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/vis-network.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+<!-- BEGIN MY CONTENT -->
+
+<div class="grid-y large-grid-frame">
+    <div class="grid-x">
+        <div class="large-8 cell large-cell-block-y" style="height: 100vh">
+            <div id="infrastructureNetwork">
+                <h4 style="position: absolute;z-index: 1">Runtime Infrastructure</h4>
+                <div id="infrastructureNetwork_vis" style="height: 100%; position: relative;"></div>
+            </div>
+            <div id="moduleNetwork">
+                <h4 style="position: absolute;z-index: 1">Application Architecture</h4>
+                <div id="moduleNetwork_vis" style="height: 100%; position: relative;"></div>
+            </div>
+        </div>
+        <div class="large-4 cell large-cell-block-y">
+            <div class="expanded button-group" style="margin: 0">
+                <a class="button" download="allData.json" id="downloadButton">Download Data</a>
+                <label for="uploadInput" class="button">Upload File</label>
+                <input type="file" id="uploadInput" class="show-for-sr" onchange="handleUpload(this.files);" accept=".json">
+            </div>
+            <div id="flowMetricsCard" class="card">
+                <div class="card-divider">
+                    <h5>Flow Metrics</h5>
+                </div>
+                <div class="card-section">
+                    <table class="unstriped">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="selectionMetricsCard" class="card">
+                <div class="card-divider">
+                    <h5>Selection Metrics</h5>
+                </div>
+                <div class="card-section">
+                    <table class="unstriped">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="infrastructureCard" class="card">
+                <div class="card-divider">
+                    <h5>Infrastructure Properties</h5>
+                </div>
+                <div class="card-section">
+                    <table class="unstriped">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="dataFlowCard" class="card">
+                <div class="card-divider">
+                    <h5>Data Flow Properties</h5>
+                </div>
+                <div class="card-section">
+                    <table class="unstriped">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- END MY CONTENT -->
+
+<!-- JavaScripts -->
+<script>
+    // this code makes it possible to use the sharedLogic code
+    // noinspection JSUnusedLocalSymbols
+    const module = undefined;
+</script>
+
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-3.2.1.min.js"></script>
+<script src="js/vendor/vis-network.min.js"></script>
+<script src="js/vendor/foundation.min.js"></script>
+<script src="js/vendor/split.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.js"></script>
+<script src="js/plugins.js"></script>
+
+<script src="../sharedLogic/infrastructure-model.js"></script>
+<script src="../sharedLogic/data_flow-model.js"></script>
+<script src="../sharedLogic/dijkstra.js"></script>
+<script src="../sharedLogic/evaluator.js"></script>
+
+<script src="js/infrastructure-view.js"></script>
+<script src="js/infrastructure-controller.js"></script>
+<script src="js/data_flow_view.js"></script>
+<script src="js/data_flow-controller.js"></script>
+<script src="js/information-card-controller.js"></script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

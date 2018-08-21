@@ -1,0 +1,192 @@
+// TODO needs to be updated to new naming convention
+
+{
+    "nodes": [
+        {
+            "id": "e1",
+            "label": "Edge 1",
+            "base properties": {
+                "memory (mb)": 500,
+                "price (cent/mb/s)": 0.01,
+                "performance factor (pf)": 0.5
+            },
+            "flow properties": {
+                "used memory (mb)": 0
+            }
+        },
+        {
+            "id": "e2",
+            "label": "Edge 2",
+            "base properties": {
+                "memory (mb)": 1000,
+                "price (cent/mb/s)": 0.01,
+                "performance factor (pf)": 1
+            },
+            "flow properties": {
+                "used memory (mb)": 0
+            }
+        },
+        {
+            "id": "f",
+            "label": "Fog",
+            "base properties": {
+                "memory (mb)": 1000,
+                "price (cent/mb/s)": 0.04,
+                "performance factor (pf)": 2
+            },
+            "flow properties": {
+                "used memory (mb)": 0
+            }
+        },
+        {
+            "id": "c",
+            "label": "Cloud",
+            "base properties": {
+                "memory (mb)": 10000,
+                "price (cent/mb/s)": 0.02,
+                "performance factor (pf)": 4
+            },
+            "flow properties": {
+                "used memory (mb)": 0
+            }
+        }
+    ],
+    "connections": [
+        {
+            "from": "e1",
+            "to": "f",
+            "base properties": {
+                "bandwidth (kb/s)": 8,
+                "price (cent/kb)": 2,
+                "latency (s)": 0.2
+            },
+            "flow properties": {
+                "used bandwidth (mb)": 0
+            }
+        },
+        {
+            "from": "f",
+            "to": "e1",
+            "base properties": {
+                "bandwidth (kb/s)": 50,
+                "price (cent/kb)": 3,
+                "latency (s)": 0.3
+            },
+            "flow properties": {
+                "used bandwidth (mb)": 0
+            }
+        },
+        {
+            "from": "e2",
+            "to": "f",
+            "base properties": {
+                "bandwidth (kb/s)": 50,
+                "price (cent/kb)": 2,
+                "latency (s)": 0.2
+            },
+            "flow properties": {
+                "used bandwidth (mb)": 0
+            }
+        },
+        {
+            "from": "f",
+            "to": "c",
+            "base properties": {
+                "bandwidth (kb/s)": 100,
+                "price (cent/kb)": 1,
+                "latency (s)": 7
+            },
+            "flow properties": {
+                "used bandwidth (mb)": 0
+            }
+        },
+        {
+            "from": "c",
+            "to": "f",
+            "base properties": {
+                "bandwidth (kb/s)": 250,
+                "price (cent/kb)": 1,
+                "latency (s)": 9
+            },
+            "flow properties": {
+                "used bandwidth (mb)": 0
+            }
+        }
+    ],
+    "modules": [
+        {
+            "id": "sm_1",
+            "label": "Sensor",
+            "type": "sensor",
+            "base properties": {
+                "mode": "parallel",
+                "output rate (kb/s)": 10
+            }
+        },
+        {
+            "id": "fm_1",
+            "label": "Analyzer",
+            "type": "function",
+            "base properties": {
+                "mode": "parallel",
+                "output size (%)": 80,
+                "processing time (s/pf)": 10,
+                "required memory (mb)": 500
+            },
+            "flow properties": {
+                "not reached because of data path": []
+            }
+        },
+        {
+            "id": "fm_2",
+            "label": "Interpreter",
+            "type": "function",
+            "base properties": {
+                "mode": "selective",
+                "output size (%)": 30,
+                "processing time (s/pf)": 40,
+                "required memory (mb)": 1000
+            },
+            "flow properties": {
+                "not reached because of data path": []
+            }
+        },
+        {
+            "id": "am_1",
+            "label": "Actuator",
+            "type": "actuator",
+            "flow properties": {
+                "not reached because of data path": []
+            }
+        }
+    ],
+    "dataPaths": [
+        {
+            "from": "sm_1",
+            "to": "fm_1",
+            "flow properties": {
+                "required bandwidth (kb/s)": 0,
+                "involved connections": [],
+                "not reached because of data path": []
+            }
+        },
+        {
+            "from": "fm_1",
+            "to": "fm_2",
+            "flow properties": {
+                "required bandwidth (kb/s)": 0,
+                "involved connections": [],
+                "not reached because of data path": []
+            }
+        },
+        {
+            "from": "fm_2",
+            "to": "am_1",
+            "flow properties": {
+                "required bandwidth (kb/s)": 0,
+                "involved connections": [],
+                "not reached because of data path": []
+            }
+        }
+    ]
+}
