@@ -1,5 +1,5 @@
 {
-    "name": "FogCostSim",
+    "name": "FogExplorer",
     "version": "0.0.1",
     "dependencies": {
         "vis": "4.21.0",
@@ -9,5 +9,5 @@
     "scripts": {
         "test": "mocha"
     },
-    "repository": "https://github.com/MoeweX/FogCostSim"
+    "repository": "https://github.com/OpenFogStack/FogExplorer"
 }

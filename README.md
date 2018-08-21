@@ -1,4 +1,4 @@
-# Fog Cost Simulator
+# FogExplorer
 
 To start the browser application, just open browser/index.html in your favorite browser.
 
