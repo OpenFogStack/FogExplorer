@@ -112,8 +112,8 @@ class InformationCardController {
             const node = infrastructureModel.nodes.get(nodeId);
             this.infrastructureCard.updateHeadlineText("Machine Information");
             keyValues = [
-                {key: "Id: ", value: node_id(node)},
-                {key: "Name: ", value: node_label(node)},
+                // {key: "Id: ", value: node_id(node)},
+                // {key: "Name: ", value: node_label(node)},
                 {key: "Performance Indicator: ", value: node_performanceIndicator(node) + " pi"},
                 {key: "Available Memory: ", value: node_availableMemory(node) + " MB"},
                 {key: "Used Memory: ", value: node_usedMemory(node) + " MB"},
@@ -124,7 +124,7 @@ class InformationCardController {
             const connection = infrastructureModel.connections.get(connectionId);
             this.infrastructureCard.updateHeadlineText("Connection Information");
             keyValues = [
-                {key: "Id:", value: connection_id(connection)},
+                // {key: "Id:", value: connection_id(connection)},
                 {key: "Latency: ", value: connection_latency(connection) + " s"},
                 {key: "Available Bandwidth: ", value: connection_availableBandwidth(connection) + " kB/s"},
                 {key: "Used Bandwidth: ", value: connection_usedBandwidth(connection) + " kB/s"},
@@ -150,8 +150,8 @@ class InformationCardController {
             const module = dataFlowModel.modules.get(moduleId);
             this.dataFlowCard.updateHeadlineText("Module Information");
             keyValues = [
-                {key: "Id:", value: module_id(module)},
-                {key: "Name:", value: module_label(module)},
+                // {key: "Id:", value: module_id(module)},
+                // {key: "Name:", value: module_label(module)},
                 {key: "Type:", value: module_type(module)}
             ];
 
@@ -178,9 +178,9 @@ class InformationCardController {
             const dataPath = dataFlowModel.dataPaths.get(dataPathId);
             this.dataFlowCard.updateHeadlineText("Data Stream Properties");
             keyValues = [
-                {key: "Id:", value: dataPath_id(dataPath)},
-                {key: "From Module:", value: dataPath_from(dataPath)},
-                {key: "To Module:", value: dataPath_to(dataPath)},
+                // {key: "Id:", value: dataPath_id(dataPath)},
+                // {key: "From Module:", value: dataPath_from(dataPath)},
+                // {key: "To Module:", value: dataPath_to(dataPath)},
                 {key: "Required Bandwidth: ", value: dataPath_requiredBandwidth(dataPath) + "MB/s"}
             ];
 

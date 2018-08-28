@@ -18,6 +18,32 @@
 <body>
 <!-- BEGIN MY CONTENT -->
 
+<div class="large reveal" id="tutorialModal" data-reveal>
+    <h1>FogExplorer</h1>
+
+    <h4>About</h4>
+    <p>Welcome to FogExplorer, an interactive simulation tool for the Quality of Service (QoS) and cost evaluation of
+        fog-based IoT applications during the design phase.</p>
+
+    <p>Designing an application for the fog is complex, as developers typically have to consider the application
+        architecture, the runtime infrastructure and the deployment mapping from application modules to infrastructure
+        machines. FogExplorer simulates how changes to any of these three aspects affects QoS and cost metrics.</p>
+
+    <h4>The FogExplorer UI</h4>
+    <p>The FogExplorer UI comprises three areas. In the top left, you see and explore the current infrastructure
+        model (machines and their interconnections). The bottom left contains the current application model
+        (application modules and inter-module data streams). The right hand side shows metrics and properties,
+        depending on the selections made in any of the model graphs.</p>
+
+    <p>To place an application module on an infrastructure machine, simply select a module first and then click on
+        any machine. When all machines are placed, metrics are calculated. If a placement is invalid, e.g., a missing
+        infrastructure connection disrupts data streams or a resource has insufficient memory, FogExplorer will
+        highlight the issue.</p>
+
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 <div class="grid-y large-grid-frame">
     <div class="grid-x">
         <div class="large-8 cell large-cell-block-y" style="height: 100vh">
@@ -32,9 +58,11 @@
         </div>
         <div class="large-4 cell large-cell-block-y" style="height: 100vh">
             <div class="expanded button-group" style="margin: 0">
-                <a class="button" download="allData.json" id="downloadButton">Download Data</a>
-                <label for="uploadInput" class="button">Upload File</label>
-                <input type="file" id="uploadInput" class="show-for-sr" onchange="handleUpload(this.files);" accept=".json">
+                <a class="button" download="allData.json" id="downloadButton">Download Models</a>
+                <label for="uploadInput" class="button">Upload Models</label>
+                <input type="file" id="uploadInput" class="show-for-sr" onchange="handleUpload(this.files);"
+                       accept=".json">
+                <a class="button" data-open="tutorialModal">Tutorial</a>
             </div>
             <div id="flowMetricsCard" class="card">
                 <div class="card-divider">

@@ -12,6 +12,10 @@ Split(['#infrastructureNetwork', '#moduleNetwork'], {
     sizes: [50, 50]
 });
 
+$(document).foundation();
+// open modal
+$("#tutorialModal").foundation("open");
+
 function start(json) {
 
     loadModels(json);
