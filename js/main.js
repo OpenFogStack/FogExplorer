@@ -324,8 +324,10 @@ Split(['#infrastructureNetwork', '#moduleNetwork'], {
 });
 
 $(document).foundation();
-// open modal
-$("#tutorialModal").foundation("open");
+// open modal if not reloaded
+if (location.hash !== "#reload") {
+    $("#tutorialModal").foundation("open");
+}
 
 function start(json) {
 
@@ -352,6 +354,7 @@ function start(json) {
     });
 
     $("#weak").click(function () {
+        location.hash = "reload"; // needed to detect page reload
         location.reload();
     });
 
