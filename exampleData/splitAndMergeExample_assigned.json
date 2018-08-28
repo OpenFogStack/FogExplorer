@@ -287,8 +287,8 @@
         "totalProcessingTime": 8,
         "totalTransmissionCost": 42,
         "totalTransmissionTime": 5,
-        "overProvisionedNodes": [],
-        "overProvisionedConnections": [],
+        "underProvisionedNodes": [],
+        "underProvisionedConnections": [],
         "impossiblePaths": []
     }
 }

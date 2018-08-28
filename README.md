@@ -33,10 +33,10 @@ The current node compatibility is build on the following ideas:
 
 - We store used bandwidth and memory so that it does not have to be recalculated every time for djikstra, they are stored in infrastructure because this is related to infrastructure
 - We do not store metrics (time and cost) in fields, because to many factors influence these values
-- If a resource is over-provisioned (memory/bandwidth), the available capacity is shared between its users (so each one gets less). This leads to a lower price, but an infinite processing/transmission time
-- If a resource is over-provisioned (memory/bandwidth), the problem is treated in an isolated fashion, so it does not influence other resources (e.g. if a connection has not enough bandwidth, the next module still pretends to receive the amount that it would receive, if the connection had enough bandwidth). Reason: We want to identify problems independent from each other
+- If a resource is under-provisioned (memory/bandwidth), the available capacity is shared between its users (so each one gets less). This leads to a lower price, but an infinite processing/transmission time
+- If a resource is under-provisioned (memory/bandwidth), the problem is treated in an isolated fashion, so it does not influence other resources (e.g. if a connection has not enough bandwidth, the next module still pretends to receive the amount that it would receive, if the connection had enough bandwidth). Reason: We want to identify problems independent from each other
 - Multi Approach: If a data path does not work, all subsequent paths are treated as not possible. Information is only shown for paths, which are possible.
-- Dijkstra only chooses connections for which the required bandwidth > the bandwidth of the currently evaluated initial module. However, for Dijkstra over-provisioning is not considered (because multiple executions would be needed)
+- Dijkstra only chooses connections for which the required bandwidth > the bandwidth of the currently evaluated initial module. However, for Dijkstra under-provisioning is not considered (because multiple executions would be needed)
 
 ### Multi S/A
 

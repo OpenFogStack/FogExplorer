@@ -3,7 +3,7 @@ let infrastructureController;
 let informationCardController;
 
 // Load JSON
-loadJSON("../exampleData/splitAndMergeExample.json", start, function (err) {
+loadJSON("../exampleData/splitAndMergeExample_assigned.json", start, function (err) {
     console.log(err);
 });
 

@@ -184,18 +184,18 @@ class InfrastructureModel {
     }
 
     /**
-     * Returns the over-provision ratio of the connection with the given id. The ratio is 1, if the connection is not
-     * over-provisioned.
+     * Returns the under-provision ratio of the connection with the given id. The ratio is 1, if the connection is not
+     * under-provisioned.
      *
      * @param connectionId - the id of the connection
-     * @return {number} - the over-provision ratio
+     * @return {number} - the under-provision ratio
      */
-    getBandwidthOverProvisionRatioForConnectionWithId(connectionId) {
+    getBandwidthUnderProvisionRatioForConnectionWithId(connectionId) {
         if (this.connectionsWithMissingBandwidth.includes(connectionId)) {
             const connection = this.connections.get(connectionId);
             return connection_usedBandwidth(connection) / connection_availableBandwidth(connection);
         } else {
-            // connection is not overprovisioned
+            // connection is not underprovisioned
             return 1;
         }
     }
@@ -320,18 +320,18 @@ class InfrastructureModel {
     }
 
     /**
-     * Returns the over-provision ratio of the node with the given id. The ratio is 1, if the connection is not
-     * over-provisioned.
+     * Returns the under-provision ratio of the node with the given id. The ratio is 1, if the connection is not
+     * under-provisioned.
      *
      * @param nodeId - the id of the node
-     * @return {number} - the over-provision ratio
+     * @return {number} - the under-provision ratio
      */
-    getMemoryOverProvisionRatioForNodeWithId(nodeId) {
+    getMemoryUnderProvisionRatioForNodeWithId(nodeId) {
         if (this.nodesWithMissingMemory.includes(nodeId)) {
             const node = this.nodes.get(nodeId);
             return node_usedMemory(node) / node_availableMemory(node);
         } else {
-            // node is not overprovisioned
+            // node is not underprovisioned
             return 1;
         }
     }

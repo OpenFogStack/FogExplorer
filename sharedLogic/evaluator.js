@@ -305,7 +305,7 @@ function getTotalProcessingTimeAsString() {
 /**
  * Calculates and sets the actual processing cost for the module with the given id that arises every second.
  *
- * Considers over-provisioning (more used memory than available memory on the used node).
+ * Considers under-provisioning (more used memory than available memory on the used node).
  * Example: node{1500mb used, 1000mb available}, module{1000mb required} -> share is 666mb
  *
  * A sensor/sink has always a processing cost of 0.
@@ -324,9 +324,9 @@ function _calculateProcessingCostForModuleWithId(moduleId) {
         const node = infrastructureModel.nodes.get(nodeId);
         const price = node_memoryPrice(node);
 
-        const overProvisionRatio = infrastructureModel.getMemoryOverProvisionRatioForNodeWithId(nodeId);
+        const underProvisionRatio = infrastructureModel.getMemoryUnderProvisionRatioForNodeWithId(nodeId);
 
-        module_processingCost(module, requiredMemory / overProvisionRatio * price);
+        module_processingCost(module, requiredMemory / underProvisionRatio * price);
     }
 
     dataFlowModel.modules.update(module);
@@ -460,7 +460,7 @@ function getTotalTransmissionTimeAsString() {
 /**
  * Calculates and sets the transmission cost for the dataPath with the given id that arises every second.
  *
- * Considers over-provisioning (more used bandwidth than available bandwidth on the used connection).
+ * Considers under-provisioning (more used bandwidth than available bandwidth on the used connection).
  * Example: connection{1500mb used, 1000mb available}, path{1000mb required} -> share is 666mb
  *
  * @param dataPathId - the dataPath id
@@ -478,9 +478,9 @@ function _calculateTransmissionCostForDataPathWithId(dataPathId) {
         dataPath_involvedConnections(dataPath).forEach(function (connectionId) {
             const connection = infrastructureModel.connections.get(connectionId);
             const price = connection_bandwidthPrice(connection);
-            const overProvisionRatio = infrastructureModel.getBandwidthOverProvisionRatioForConnectionWithId(connectionId);
+            const underProvisionRatio = infrastructureModel.getBandwidthUnderProvisionRatioForConnectionWithId(connectionId);
 
-            transmissionCost += requiredBandwidth / overProvisionRatio * price;
+            transmissionCost += requiredBandwidth / underProvisionRatio * price;
         });
 
         dataPath_transmissionCost(dataPath, transmissionCost);
@@ -539,8 +539,8 @@ function getFlowMetricsDataRepresentation() {
     metrics["totalProcessingTime"] = getTotalProcessingTime();
     metrics["totalTransmissionCost"] = getTotalTransmissionCost();
     metrics["totalTransmissionTime"] = getTotalTransmissionTime();
-    metrics["overProvisionedNodes"] = infrastructureModel.nodesWithMissingMemory;
-    metrics["overProvisionedConnections"] = infrastructureModel.connectionsWithMissingBandwidth;
+    metrics["underProvisionedNodes"] = infrastructureModel.nodesWithMissingMemory;
+    metrics["underProvisionedConnections"] = infrastructureModel.connectionsWithMissingBandwidth;
     metrics["impossiblePaths"] = dataFlowModel.impossiblePaths;
     return metrics;
 }
