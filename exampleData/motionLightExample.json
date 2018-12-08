@@ -1,0 +1,159 @@
+{
+	"nodes": [
+		{
+			"id": "ecm",
+			"label": "Edge Ceiling Machine",
+			"baseProperties": {
+				"availableMemory": 300,
+				"memoryPrice": 0.05,
+				"performanceIndicator": 0.2
+			}
+		},
+		{
+			"id": "edm",
+			"label": "Edge Door Machine",
+			"baseProperties": {
+				"availableMemory": 300,
+				"memoryPrice": 0.05,
+				"performanceIndicator": 0.2
+			}
+		},
+		{
+			"id": "shs",
+			"label": "Smarthome Server",
+			"baseProperties": {
+				"availableMemory": 2000,
+				"memoryPrice": 0.03,
+				"performanceIndicator": 1
+			}
+		},
+		{
+			"id": "c",
+			"label": "Cloud",
+			"baseProperties": {
+				"availableMemory": 8000,
+				"memoryPrice": 0.01,
+				"performanceIndicator": 4
+			}
+		}
+	],
+	"connections": [
+		{
+			"from": "ecm",
+			"to": "shs",
+			"baseProperties": {
+				"availableBandwidth": 100,
+				"bandwidthPrice": 0.1,
+				"latency": 0.2
+			}
+		},
+		{
+			"from": "shs",
+			"to": "ecm",
+			"baseProperties": {
+				"availableBandwidth": 100,
+				"bandwidthPrice": 0.1,
+				"latency": 0.2
+			}
+		},
+		{
+			"from": "edm",
+			"to": "shs",
+			"baseProperties": {
+				"availableBandwidth": 15,
+				"bandwidthPrice": 0.1,
+				"latency": 0.2
+			}
+		},
+		{
+			"from": "shs",
+			"to": "c",
+			"baseProperties": {
+				"availableBandwidth": 100,
+				"bandwidthPrice": 1,
+				"latency": 4
+			}
+		},
+		{
+			"from": "c",
+			"to": "shs",
+			"baseProperties": {
+				"availableBandwidth": 100,
+				"bandwidthPrice": 1,
+				"latency": 2
+			}
+		}
+	],
+	"modules": [
+		{
+			"id": "ms",
+			"label": "Motion Sensor",
+			"type": "sensor",
+			"baseProperties": {
+				"mode": "individual",
+				"outputRate": 10,
+				"requiredMemory": 100
+			}
+		},
+		{
+			"id": "agg",
+			"label": "Aggregator",
+			"type": "service",
+			"baseProperties": {
+				"mode": "individual",
+				"outputRatio": 0.1,
+				"referenceProcessingTime": 5,
+				"requiredMemory": 200
+			}
+		},
+		{
+			"id": "md",
+			"label": "Motion Detector",
+			"type": "service",
+			"baseProperties": {
+				"mode": "individual",
+				"outputRatio": 0.01,
+				"referenceProcessingTime": 0.5,
+				"requiredMemory": 200
+			}
+		},
+		{
+			"id": "vs",
+			"label": "Visualization and Storage",
+			"type": "sink",
+			"baseProperties": {
+				"requiredMemory": 500
+			}
+		},
+		{
+			"id": "lc",
+			"label": "Light Controller",
+			"type": "sink",
+			"baseProperties": {
+				"requiredMemory": 100
+			}
+		}
+	],
+	"dataPaths": [
+		{
+			"from": "ms",
+			"to": "agg"
+		},
+		{
+			"from": "ms",
+			"to": "md"
+		},
+		{
+			"from": "md",
+			"to": "lc"
+		},
+		{
+			"from": "md",
+			"to": "vs"
+		},
+		{
+			"from": "agg",
+			"to": "vs"
+		}
+	]
+}
