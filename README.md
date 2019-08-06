@@ -11,6 +11,12 @@ Code naming notes (necessary because of incomplete refactoring):
 - data path = data stream
 - data flow = application
 
+## Related Publications
+
+Jonathan Hasenburg, Sebastian Werner, David Bermbach. **Supporting the Evaluation of Fog-based IoT Applications During the Design Phase**. In: Proceedings of the 5th Workshop on Middleware and Applications for the Internet of Things (M4IoT 2018). ACM 2018. [Bib](http://www.mcc.tu-berlin.de/fileadmin/fg344/publications/2018-11-01_fogexplorer-m4iot.bib). [PDF](http://www.mcc.tu-berlin.de/fileadmin/fg344/publications/2018-11-01_fogexplorer-m4iot.pdf).
+
+Jonathan Hasenburg, Sebastian Werner, David Bermbach. **FogExplorer**. In: Proceedings of the 19th International Middleware Conference, Demos and Posters (MIDDLEWARE 2018). ACM 2018. [Bib](http://www.mcc.tu-berlin.de/fileadmin/fg344/publications/2018-11-01_fogexplorer-demo.bib). [PDF](http://www.mcc.tu-berlin.de/fileadmin/fg344/publications/2018-11-01_fogexplorer_demo.pdf).
+
 ## Node compatibility
 
 Ideally, we would use ECMA6 Modules, which would allow us to get rid fo the global variables because browser and node use the same paradigms. However, this seems unstable at the moment, so we stick with global variables... .
