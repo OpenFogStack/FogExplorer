@@ -1,5 +1,39 @@
 # FogExplorer
 
+Fog application design is complex as it comprises not only the application architecture, but also the runtime infrastructure, and the deployment mapping from application modules to infrastructure machines. For each of these aspects, there is a variety of design options that all affect quality of service and cost of the resulting application. FogExplorer, is an interactive simulation tool for the QoS and cost evaluation of fog-based IoT applications already during the design phase.
+
+If you use this software in a publication, please cite it as:
+
+### Text
+Jonathan Hasenburg, Sebastian Werner, David Bermbach. **Supporting the Evaluation of Fog-based IoT Applications During the Design Phase**. In: Proceedings of the 5th Workshop on Middleware and Applications for the Internet of Things (M4IoT 2018). ACM 2018.
+
+Jonathan Hasenburg, Sebastian Werner, David Bermbach. **FogExplorer**. In: Proceedings of the 19th International Middleware Conference, Demos and Posters (MIDDLEWARE 2018). ACM 2018.
+
+### BibTeX
+```
+@inproceedings{hasenburg_supporting_2018,
+	location = {Rennes, France},
+	title = {Supporting the Evaluation of Fog-based {IoT} Applications During the Design Phase},
+	booktitle = {Proceedings of the 5th Workshop on Middleware and Applications for the Internet of Things (M4IoT 2018)},
+	publisher = {{ACM}},
+	author = {Hasenburg, Jonathan and Werner, Sebastian and Bermbach, David},
+	year = {2018}
+}
+
+@inproceedings{hasenburg_fogexplorer_2018,
+	location = {Rennes, France},
+	title = {{FogExplorer}},
+	booktitle = {Proceedings of the 19th International Middleware Conference, Demos, and Posters (MIDDLEWARE 2018)},
+	publisher = {{ACM}},
+	author = {Hasenburg, Jonathan and Werner, Sebastian and Bermbach, David},
+	year = {2018}
+}
+```
+
+A full list of our [publications](https://www.mcc.tu-berlin.de/menue/forschung/publikationen/parameter/en/) and [prototypes](https://www.mcc.tu-berlin.de/menue/forschung/prototypes/parameter/en/) is available on our group website.
+
+## Instructions
+
 To start the browser application, just open browser/index.html in your favorite browser.
 
 To start the node application, just execute node/nodeServer.js with node.
@@ -10,12 +44,6 @@ Code naming notes (necessary because of incomplete refactoring):
 - node = machine
 - data path = data stream
 - data flow = application
-
-## Related Publications
-
-Jonathan Hasenburg, Sebastian Werner, David Bermbach. **Supporting the Evaluation of Fog-based IoT Applications During the Design Phase**. In: Proceedings of the 5th Workshop on Middleware and Applications for the Internet of Things (M4IoT 2018). ACM 2018. [Bib](http://www.mcc.tu-berlin.de/fileadmin/fg344/publications/2018-11-01_fogexplorer-m4iot.bib). [PDF](http://www.mcc.tu-berlin.de/fileadmin/fg344/publications/2018-11-01_fogexplorer-m4iot.pdf).
-
-Jonathan Hasenburg, Sebastian Werner, David Bermbach. **FogExplorer**. In: Proceedings of the 19th International Middleware Conference, Demos and Posters (MIDDLEWARE 2018). ACM 2018. [Bib](http://www.mcc.tu-berlin.de/fileadmin/fg344/publications/2018-11-01_fogexplorer-demo.bib). [PDF](http://www.mcc.tu-berlin.de/fileadmin/fg344/publications/2018-11-01_fogexplorer_demo.pdf).
 
 ## Node compatibility
 
