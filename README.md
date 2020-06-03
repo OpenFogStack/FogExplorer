@@ -1,3 +1,6 @@
+Please note that this branch contains a modified prototype of FogExplorer as used in our paper ...
+To see the full repository for this paper, see [here](https://github.com/pfandzelter/zero2fog).
+
 # FogExplorer
 
 Fog application design is complex as it comprises not only the application architecture, but also the runtime infrastructure, and the deployment mapping from application modules to infrastructure machines. For each of these aspects, there is a variety of design options that all affect quality of service and cost of the resulting application. FogExplorer, is an interactive simulation tool for the QoS and cost evaluation of fog-based IoT applications already during the design phase.
@@ -41,6 +44,7 @@ To start the node application, just execute node/nodeServer.js with node.
 To run all (node) test, just execute npm test.
 
 Code naming notes (necessary because of incomplete refactoring):
+
 - node = machine
 - data path = data stream
 - data flow = application
@@ -50,9 +54,10 @@ Code naming notes (necessary because of incomplete refactoring):
 Ideally, we would use ECMA6 Modules, which would allow us to get rid fo the global variables because browser and node use the same paradigms. However, this seems unstable at the moment, so we stick with global variables... .
 
 The current node compatibility is build on the following ideas:
-* The shared logic classes get a module.exports statement for each function
-* No other changes are made in these classes, they are build with the global availability of the browser in mind
-* To use this code, the nodeGlobalizer.js takes all these exported functions and makes them globally available. By requiring this file, all node modules/methods can access everything.
+
+- The shared logic classes get a module.exports statement for each function
+- No other changes are made in these classes, they are build with the global availability of the browser in mind
+- To use this code, the nodeGlobalizer.js takes all these exported functions and makes them globally available. By requiring this file, all node modules/methods can access everything.
 
 ## Assumptions
 
@@ -78,14 +83,15 @@ The current node compatibility is build on the following ideas:
 - If a model has n inputs, the module treats them as just one by using the sum of all bandwidths
 
 ## ToDos
+
 - It is not possible to upload the same file twice, even if after the first upload the assignment changed
 
 ### Backlog ToDos
+
 - Manipulation Possibilities: Add Node/Edge
 - Real information for processing time should overwrite PU based estimate
 
 ### Better Code ToDos
+
 - Change assignCurrentlySelectedModuleToNodeWithId(nodeId) to setAssignmentForModuleAndNodeId(moduleId, nodeId), the currentlySelectedModule field is browser dependent and should thus be stored in one of the browsers controllers, setCurrentlySelectedModuleToModuleWithId can be removed afterwards as well
 - Move the infrastructure and dataflow helper methods in their own class, so that we do not need so many exports. Also move the evaluator code into its own evaluator class
-
-
