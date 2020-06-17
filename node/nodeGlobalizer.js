@@ -47,19 +47,25 @@ dataPath_transmissionCost = b.dataPath_transmissionCost;
 const e = require("../sharedLogic/evaluator");
 loadModels = e.loadModels;
 saveModelsAndFlowInformation = e.saveModelsAndFlowInformation;
-setCurrentlySelectedModuleToModuleWithId = e.setCurrentlySelectedModuleToModuleWithId;
-assignCurrentlySelectedModuleToNodeWithId = e.assignCurrentlySelectedModuleToNodeWithId;
+setCurrentlySelectedModuleToModuleWithId =
+  e.setCurrentlySelectedModuleToModuleWithId;
+assignCurrentlySelectedModuleToNodeWithId =
+  e.assignCurrentlySelectedModuleToNodeWithId;
 calculateCoherentFlow = e.calculateCoherentFlow;
-getProcessingTimeForModuleWithIdAsString = e.getProcessingTimeForModuleWithIdAsString;
+getProcessingTimeForModuleWithIdAsString =
+  e.getProcessingTimeForModuleWithIdAsString;
 getTotalProcessingTime = e.getTotalProcessingTime;
 getTotalProcessingTimeAsString = e.getTotalProcessingTimeAsString;
-getProcessingCostForModuleWithIdAsString = e.getProcessingCostForModuleWithIdAsString;
+getProcessingCostForModuleWithIdAsString =
+  e.getProcessingCostForModuleWithIdAsString;
 getTotalProcessingCost = e.getTotalProcessingCost;
 getTotalProcessingCostAsString = e.getTotalProcessingCostAsString;
-getTransmissionTimeForDataPathWithIdAsString = e.getTransmissionTimeForDataPathWithIdAsString;
+getTransmissionTimeForDataPathWithIdAsString =
+  e.getTransmissionTimeForDataPathWithIdAsString;
 getTotalTransmissionTime = e.getTotalTransmissionTime;
 getTotalTransmissionTimeAsString = e.getTotalTransmissionTimeAsString;
-getTransmissionCostForDataPathWithIdAsString = e.getTransmissionCostForDataPathWithIdAsString;
+getTransmissionCostForDataPathWithIdAsString =
+  e.getTransmissionCostForDataPathWithIdAsString;
 getTotalTransmissionCost = e.getTotalTransmissionCost;
 getTotalTransmissionCostAsString = e.getTotalTransmissionCostAsString;
 getFlowMetricsDataRepresentation = e.getFlowMetricsDataRepresentation;
