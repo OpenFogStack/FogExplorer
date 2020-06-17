@@ -1,4 +1,4 @@
-Please note that this branch contains a modified prototype of FogExplorer as used in our paper ...
+Please note that this branch contains a modified prototype of FogExplorer.
 To see the full repository for this paper, see [here](https://github.com/pfandzelter/zero2fog).
 
 # FogExplorer
