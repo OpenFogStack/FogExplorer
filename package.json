@@ -4,7 +4,7 @@
     "dependencies": {
         "vis": "4.21.0",
         "randomcolor": "0.5.3",
-        "mocha": "5.0.4"
+        "mocha": "10.2.0"
     },
     "scripts": {
         "test": "mocha"
